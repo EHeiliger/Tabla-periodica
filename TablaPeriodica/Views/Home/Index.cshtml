@@ -1,0 +1,231 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        .Elemento{ 
+            border-style: solid;
+            width: 60px;
+            height: 60px;
+            /*margin-bottom: 10px;*/
+            
+            
+           
+        }
+        .Simbolo{
+            font-size: 30px;
+            text-align: center;
+            margin-top: -15px;
+            
+        }
+        .NumAtom {
+            font-size: 10px;
+            text-align: right;
+            margin-top: 2px;
+            margin-right: 4px;
+            /*margin-top: -30px;*/
+        }
+        .Simbolo2{
+            font-size: 20px;
+            text-align: center;
+            margin-top: -15px;
+            
+        }
+        .NumAtom2 {
+            font-size: 10px;
+            text-align: right;
+            margin-top: 1px;
+            margin-right: 2px;
+            /*margin-top: -30px;*/
+        }
+        ul > li > p {
+            color: black;
+            font-size: 15px;
+        }
+        li {
+            margin-bottom: -5px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <h1 style="margin-left: 200px ">TABLA PERIÓDICA DE LOS ELEMENTOS</h1>
+</div>
+<div style="border-style:solid; width: 300px; height: 200px; margin-left: 200px; margin-bottom: -200px">
+    <ul>
+        <li type="square" style="color:aquamarine"><p>No metales</p></li>
+        <li type="square" style="color:coral"><p>Semimetales</p></li>
+        <li type="square" style="color:deepskyblue"><p>Elementos de Transición</p></li>
+        <li type="square" style="color:cyan"><p>Elementos de Transición</p></li>
+        <li type="square" style="color:lightblue"><p>Metales alcalinoterreos</p></li>
+        <li type="square" style="color:darkcyan"><p>Metales alcalinos</p></li>
+        <li type="square" style="color:plum"><p>Lantánidos y Actínidos</p></li>
+    </ul>
+</div>
+<div id="Elemtos">
+    <table>
+        <tr>
+            <td class="Elemento" style="        background-color: aquamarine">
+                <p class="NumAtom">1</p>
+                <p class="Simbolo">H</p>
+            </td>
+            <td colspan="16"></td>
+            <td class="Elemento" style="background-color: aquamarine">
+                <p class="NumAtom">2</p>
+                <P class="Simbolo">He</P>
+            </td>
+        </tr>
+        <tr>
+            @for (int i = 0; i < 8; i++)
+            {
+                if (i == 2)
+                {
+                    <td colspan="10"></td>
+                }
+                <td class="Elemento" style="background-color: @ViewBag.Row1[0, i, 2]">
+                    <p class="NumAtom">@ViewBag.Row1[0, i, 0]</p>
+                    <p class="Simbolo">@ViewBag.Row1[0, i, 1]</p>
+
+                </td>
+            }
+
+        </tr>
+        <tr>
+            @for (int i = 0; i < 8; i++)
+            {
+                if (i == 2)
+                {
+                    <td colspan="10"></td>
+                }
+                <td class="Elemento" style="background-color: @ViewBag.Row2[0, i, 2]">
+                    <p class="NumAtom">@ViewBag.Row2[0, i, 0]</p>
+                    <p class="Simbolo">@ViewBag.Row2[0, i, 1]</p>
+
+                </td>
+            }
+
+        </tr>
+
+
+        <tr>
+            @for (int i = 0; i < 18; i++)
+            {
+
+                <td class="Elemento" style="background-color: @ViewBag.Row3[0, i, 2]">
+                    <p class="NumAtom">@ViewBag.Row3[0, i, 0]</p>
+                    <p class="Simbolo">@ViewBag.Row3[0, i, 1]</p>
+
+                </td>
+            }
+
+        </tr>
+
+        <tr>
+            @for (int i = 0; i < 18; i++)
+            {
+
+                <td class="Elemento" style="background-color: @ViewBag.Row4[0, i, 2]">
+                    <p class="NumAtom">@ViewBag.Row4[0, i, 0]</p>
+                    <p class="Simbolo">@ViewBag.Row4[0, i, 1]</p>
+
+                </td>
+            }
+
+        </tr>
+        <tr>
+            @for (int i = 0; i < 18; i++)
+            {
+                if (i == 2)
+                {
+
+                    <td class="Elemento" style="background-color: @ViewBag.Row5[0, i, 2]">
+                        <p class="NumAtom2">@ViewBag.Row5[0, i, 0]</p>
+                        <p class="Simbolo2">@ViewBag.Row5[0, i, 1]</p>
+
+                    </td>
+                }
+                else
+                {
+                    <td class="Elemento" style="background-color: @ViewBag.Row5[0, i, 2]">
+                        <p class="NumAtom">@ViewBag.Row5[0, i, 0]</p>
+                        <p class="Simbolo">@ViewBag.Row5[0, i, 1]</p>
+
+                    </td>
+                }
+
+            }
+
+        </tr>
+        <tr>
+            @for (int i = 0; i < 18; i++)
+            {
+                if (i == 2)
+                {
+
+                    <td class="Elemento" style="background-color: @ViewBag.Row6[0, i, 2]">
+                        <p class="NumAtom2">@ViewBag.Row6[0, i, 0]</p>
+                        <p class="Simbolo2">@ViewBag.Row6[0, i, 1]</p>
+
+                    </td>
+                }
+                else
+                {
+                    <td class="Elemento" style="background-color: @ViewBag.Row6[0, i, 2]">
+                        <p class="NumAtom">@ViewBag.Row6[0, i, 0]</p>
+                        <p class="Simbolo">@ViewBag.Row6[0, i, 1]</p>
+
+                    </td>
+                }
+
+            }
+
+        </tr>
+
+    </table>
+</div>
+
+<div id="Lantánidos" style="margin-left: 175px; margin-bottom: -10px">
+    <p><strong>Lantánidos</strong></p>
+    <table>
+        <tr class="Elemento">
+
+            @for (int i = 0; i < 15; i++)
+            {
+                <td class="Elemento" style="background-color: @ViewBag.Row7[0, i, 2]">
+                    <p class="NumAtom">@ViewBag.Row7[0, i, 0]</p>
+                    <p class="Simbolo">@ViewBag.Row7[0, i, 1]</p>
+                </td>
+            }
+        </tr>
+    </table>
+</div>
+
+<div id="Actínidos"style="margin-left: 175px; margin-top: 5px;">
+
+    <p><strong>Actínidos</strong></p>
+    <table>
+        <tr class="Elemento">
+
+            @for (int i = 0; i < 15; i++)
+            {
+                <td class="Elemento" style="background-color: @ViewBag.Row8[0, i, 2]">
+                    <p class="NumAtom">@ViewBag.Row8[0, i, 0]</p>
+                    <p class="Simbolo">@ViewBag.Row8[0, i, 1]</p>
+                </td>
+            }
+        </tr>
+    </table>
+</div>
+
+
+
+</body>
+</html>
